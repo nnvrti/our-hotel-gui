@@ -11,7 +11,7 @@ const HotelLayout: React.FC<HotelLayoutProps> = ({ children }) => {
       <header className="bg-white shadow-md py-4">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-primary">
-            <span className="text-secondary">Stay</span>Easy
+            <span className="text-secondary">Hotel</span>
           </h1>
         </div>
       </header>
@@ -22,7 +22,7 @@ const HotelLayout: React.FC<HotelLayoutProps> = ({ children }) => {
       
       <footer className="bg-gray-800 text-white py-4">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm">© 2025 StayEasy Hotel | University Project</p>
+          <p className="text-sm">© 2025 Hotel Hotel | University Project</p>
         </div>
       </footer>
     </div>
