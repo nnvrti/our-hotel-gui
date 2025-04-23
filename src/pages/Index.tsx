@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import HotelLayout from "@/components/HotelLayout";
 import { Button } from "@/components/ui/button";
@@ -24,7 +23,6 @@ const Index = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [dashboardView, setDashboardView] = useState<"viewBookings" | "addBooking" | "manageRooms">("viewBookings");
   
-  // Handle user role selection
   const handleRoleSelect = (role: "guest" | "employee") => {
     if (role === "guest") {
       setCurrentScreen("roomSelection");
@@ -33,35 +31,28 @@ const Index = () => {
     }
   };
   
-  // Handle room selection
   const handleRoomSelect = (type: "premium" | "standard") => {
     setSelectedRoomType(type);
     setCurrentScreen("bookingForm");
   };
   
-  // Handle booking form submission
   const handleBookingSubmit = (data: BookingFormData) => {
     setBookingData(data);
     setShowConfirmation(true);
-    // After showing confirmation, we'll move to the welcome screen
     setTimeout(() => {
       setShowConfirmation(false);
       setCurrentScreen("welcome");
     }, 3000);
   };
   
-  // Handle employee login
   const handleLogin = (username: string, password: string) => {
-    // For simplicity, we're not doing actual authentication here
     setCurrentScreen("employeeDashboard");
   };
   
-  // Handle employee logout
   const handleLogout = () => {
     setCurrentScreen("welcome");
   };
   
-  // Render current screen content
   const renderContent = () => {
     switch (currentScreen) {
       case "welcome":
@@ -101,8 +92,7 @@ const Index = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                       <circle cx="9" cy="7" r="4" />
-                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      <path d="M22 21v-2a4 4 0 0 1 0 7.75" />
                     </svg>
                   </div>
                 </CardContent>
@@ -165,7 +155,8 @@ const Index = () => {
       case "employeeDashboard":
         return (
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Employee Dashboard</h2>
+            <h2 className="text-3xl font-bold mb-2">### Hotel Management System UI Design</h2>
+            <p className="text-muted-foreground mb-6">Welcome to the employee dashboard</p>
             
             <div className="bg-white shadow rounded-lg mb-6">
               <div className="flex border-b">
